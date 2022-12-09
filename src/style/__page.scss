@@ -1,0 +1,369 @@
+@import "./_variebles";
+@import "./_mixins";
+
+
+.page{
+
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    
+    @include respond(phone){
+         width: 350px;       
+    }
+
+    & h1{
+        position: relative;
+        font-size: 40px;
+        color: $Dark-Desaturated-Blue;
+        margin-top: 80px;
+        @include respond(phone){
+            font-size: 24px;
+        } 
+        z-index: 10;
+    }
+    & h2{
+        position: relative;
+        font-size: 20px;
+        color: $Grayish-Blue;
+        margin-top: 10px;
+        z-index: 10;
+    }
+    &__component-container{
+        box-shadow: rgba($Light-Grayish-Blue, 0.35) 0px 5px 15px;
+        padding: 50px ;
+        border-radius: 8px;
+        background-color: white;
+        margin-top: 80px;
+        @include respond(phone){
+            padding: 10px ;
+       }      
+        &-part1{
+            display: flex;
+            justify-content: space-between;
+           
+            @include respond(phone){
+                flex-direction: column;  
+                align-items: center;   
+                height: 200px;  
+           }       
+            & h2{
+                font-size: 15px;
+                letter-spacing: 1px;
+                margin-top: 17px;
+            }
+
+            &-02{
+                display: flex;
+                align-items: center;
+                
+                & span:nth-child(1){
+                    font-size: 40px;
+                    color: $Dark-Desaturated-Blue ;
+                    font-weight: bold;
+                }
+                & span:nth-child(2), & span:nth-child(3){
+                    color: $Grayish-Blue ;
+                 
+                }
+                & span:nth-child(2){
+                    margin-left: 5px;
+                    margin-right: 3px;
+                }
+            }
+
+        }
+        &-part2{
+            position: relative;
+            margin-top: 40px;
+            @include respond(phone){
+           
+                margin-top: -110px;
+                width: 90%;
+                margin-left:  auto;
+                margin-right: auto;
+           }      
+            
+            &-tracker{
+                position: absolute;
+                top: 0;
+                width: 120px;
+                height: 15px;
+                border-radius: 8px;
+                background-color: $Strong-Cyan;
+                @include respond(phone){
+                    height: 10px;
+                    top: 29%;
+               }     
+             
+            }
+
+            & input{
+                @include respond(phone){
+                    height: 10px;
+               }     
+                -webkit-appearance: none;
+                height: 15px;
+                border-radius: 8px;
+                width: 100%;
+                background: #d3d3d3;
+                outline: none;
+                @include respond(phone){
+                    width: 100%;;
+                    
+                }     
+                
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+                &:hover{
+                    opacity: 1;
+     
+                }
+                &:active ~ .page__component-container-part2-tracker{
+                    background-color: transparent;
+                }
+                &::-webkit-slider-thumb {
+                    position: relative;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: $Strong-Cyan;
+                    background-image: url(../../public/images/icon-slider.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    z-index: 1;
+                    box-shadow: $Strong-Cyan 0px 22px 70px 4px;
+                    border: 1px solid darken($color: $Strong-Cyan, $amount: 10);
+                    &:hover{
+                        transform: scale(0.97);
+                        background-color: lighten($color: $Strong-Cyan, $amount: 5);
+                        box-shadow: lighten($color: $Strong-Cyan, $amount: 5) 0px 22px 70px 4px;
+                        cursor: url(../../public/images/icons8-hand-cursor-25.png), default;
+              
+                    }
+                    &:active{
+                        transform: scale(1.03);
+                        cursor:grabbing;
+                        background-color: darken($color: $Strong-Cyan, $amount: 5);
+                        box-shadow: darken($color: $Strong-Cyan, $amount: 5) 0px 22px 70px 4px;
+                        cursor: url(../../public/images/icons8-hand-rock-25.png), default;
+                    }
+                }
+                &::-moz-range-thumb {
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: $Strong-Cyan;
+                    cursor: pointer;
+                    background-image: url(../../public/images/icon-slider.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    z-index: 1;
+                    box-shadow: $Strong-Cyan 0px 22px 70px 4px;
+                    border: 1px solid darken($color: $Strong-Cyan, $amount: 10);
+                    &:hover{
+                        transform: scale(0.97);
+                        background-color: lighten($color: $Strong-Cyan, $amount: 5);
+                        box-shadow: lighten($color: $Strong-Cyan, $amount: 5) 0px 22px 70px 4px;
+                        cursor: url(../../public/images/icons8-hand-cursor-25.png), default;
+                    }
+                    &:active{
+                        transform: scale(1.03);
+                        cursor:grabbing;
+                        background-color: darken($color: $Strong-Cyan, $amount: 5);
+                        box-shadow: darken($color: $Strong-Cyan, $amount: 5) 0px 22px 70px 4px;
+                        cursor: url(../../public/images/icons8-hand-rock-25.png), default;
+                    }
+                }
+
+            }
+        }
+        &-part3{
+            width: 80%;
+            display: flex;
+    
+            align-items: center;
+            margin-left: auto;
+            margin-top: 70px;
+            @include respond(phone){
+              
+                margin-top: 110px;
+                width: 100%;
+                justify-content: space-between;
+                margin-left: 0;
+           }      
+            gap: 50px;
+            & .billing-words{
+
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                & span{
+                    color: $Grayish-Blue;
+                }
+                & span:first-child{
+                    margin-right: -10px;
+                    @include respond(phone){
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }  
+                }
+                & span:last-child{
+                    @include respond(phone){
+                        margin-right: -45px;
+                    }  
+                }
+   
+            }
+            & .discount-word{
+                margin-left: -35px;
+                margin-right: 15px;
+                background-color: $Light-Grayish-Red;
+                padding: 6px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                @include respond(phone){
+                    margin-left: 0px;
+                    margin-right: 0px; 
+                    padding: 3px 10px;   
+                }     
+                & span{
+                    font-size: 13px;
+                    color: $Light-Red; 
+          
+                }
+              
+                & span:last-child{
+                   margin-left: 3px;
+                   @include respond(phone){
+                    display: none;
+                    }     
+                }
+            }
+            input {
+                position: relative;
+               outline: none;
+               height: 1px;
+               margin-right: 20px;
+               cursor: url(../../public/images/icons8-hand-cursor-25.png), default;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 50px;
+                    height: 25px;
+                    background-color: $Light-Grayish-Blue;
+                    border-radius: 10px;
+                    left: -20%;
+                    @include respond(phone){
+                        left: -55%;
+                    }    
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: $Very-Pale-Blue;
+                    top: 208%;
+                    left: 20%;
+                    @include respond(phone){
+                        left: -30%;
+                    }    
+                }
+                &:checked  {
+                    &::after{
+                        left: 175%;
+                        
+                    }     
+                    &::before{
+                        background-color: $Strong-Cyan;
+                    }
+                }
+            }
+             
+    
+        
+        }
+        &-part4{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            @include respond(phone){
+                flex-direction: column;
+                margin-top: 40px;
+                align-items: center;
+                gap: 30px;
+            }    
+            &-01{
+                text-align: left;
+                color: $Grayish-Blue;      
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                @include respond(phone){
+                    text-align: center;
+                } 
+                
+                gap: 10px;
+                & div{
+                    & span{
+                        margin-left: 10px;
+                    }
+                }
+            }
+            &-02{
+                display: flex;
+                align-items: center;
+                @include respond(phone){
+                    margin-bottom: 20px;
+                }    
+                & button{
+                    border: none;
+                    font-size: 18px;
+                    padding: 15px 50px;
+                    border-radius: 40px;
+                    background-color: $Dark-Desaturated-Blue;
+                    color: darken($color: $Very-Pale-Blue, $amount: 5 ) ;
+                    &:hover, &:active{
+                        color: $Very-Pale-Blue;
+                        cursor: url(../../public/images/icons8-hand-cursor-25.png), default;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+.grey-line{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: $Light-Grayish-Blue;
+    top: 72%;
+    @include respond(phone){
+        top: 67%;
+    }    
+}
+
+.circles-image{
+    background-image: url(../../public/images/pattern-circles.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}

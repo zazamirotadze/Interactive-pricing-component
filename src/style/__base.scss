@@ -1,0 +1,29 @@
+@import "./_variebles";
+@import "./_mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Manrope', sans-serif;
+    position: relative;
+    font-size: 15px;
+    background-color: $Very-Pale-Blue  ;
+    
+}
+
+
+.background-img{
+    width: 100%;
+    height: 600px;
+    top: -28%;
+    position: absolute;
+    background-image: url(../../public/images/bg-pattern.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
